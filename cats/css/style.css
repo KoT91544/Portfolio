@@ -1,0 +1,115 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #162831;
+    color: white;
+}
+
+button, a {
+    cursor: pointer;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    color: white;
+    padding: 15px 0;
+    
+}
+
+.header__nav {
+    display: flex;
+}
+
+.nav__item {
+    font-size: 20px;
+}
+
+.item__button {
+    background-color: transparent;
+    border: 0;
+    color: white;
+}
+
+.button-active {
+    color: white;
+}
+
+.item__link {
+    color: grey;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Main */
+.main {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+}
+
+.main__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    padding: 10px;
+    border: 1px solid white;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 1;
+}
+
+.main__card:before {
+    content: '';
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 0;
+    right: 0;
+    background-image: url("../star.svg");
+    background-size: 50px 50px;
+    background-position: top right;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity .3s;
+    z-index: 0;
+}
+
+.main__card:hover:before{
+    opacity: 1;
+}
+
+.active:before {
+    background-image: url("../star-yellow.svg");
+}
+
+.main__card p {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.main__card:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.main__card:not(:nth-child(3n)) {
+    margin-right: 100px;
+}
+
+.card__media {
+    width: 90%;
+}
+
